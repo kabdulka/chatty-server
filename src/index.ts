@@ -5,6 +5,7 @@ import helmet from "helmet";
 import morgan from "morgan";
 import bodyParser from "body-parser";
 import OpenAI from 'openai';
+import openaiRoutes from "./routes/openai";
 // import {Configuration, OpenAIApi} from "openi";
 
 dotenv.config();
@@ -32,6 +33,8 @@ export const openai = new OpenAI({
 // });
 // export const openai = new OpenAIApi(configuration);
 
+/* Routes */
+app.use("/openai", openaiRoutes)
 
 const port = process.env.PORT || 9090;
 
